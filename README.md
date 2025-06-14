@@ -116,3 +116,72 @@ The **Public Safety Notifier (PSN)** is a desktop application built in Java, des
 ```bash
 javac -cp .;mysql-connector-java-8.0.28.jar PSNGUI.java
 java -cp .;mysql-connector-java-8.0.28.jar PSNGUI
+```
+## 📱 Usage
+
+### 🧑 For Citizens
+- **Register**: Create an account  
+- **Log In**: Use your credentials  
+- **Submit Report**: Enter incident details  
+- **View Updates**: See approved reports and alerts  
+
+### 👮 For Authorities
+- **Log In**: Predefined credentials (e.g., `auth@psn.com/auth123`)  
+- **Post Alerts**: Notify the public  
+- **Convert Reports**: Turn approved reports into alerts  
+- **View**: Monitor incident reports and active alerts  
+
+### 🛠️ For Admins
+- **Log In**: Admin credentials (e.g., `admin@psn.com/admin123`)  
+- **Approve/Reject Reports**: Manage report validity  
+- **Manage Users**: Block, unblock, or delete accounts  
+- **View All Data**: Full system access  
+
+---
+
+## 🧬 Class Structure
+
+| Class                    | Description                                     |
+|--------------------------|-------------------------------------------------|
+| `PSNGUI`                 | Main GUI class, extends `JFrame`                |
+| `PatternedPanel`         | Custom `JPanel` with gradient background        |
+| `User`                   | Abstract class for user roles                   |
+| `Admin`                  | Manages reports and users                       |
+| `Authority`              | Posts alerts and converts reports               |
+| `Citizen`                | Submits reports and views updates               |
+| `Reportable`             | Interface for reports and alerts                |
+| `IncidentReport`         | Represents a report from a citizen              |
+| `Alert`                  | Represents an alert posted by an authority      |
+| `ReportService`          | Manages report and alert operations             |
+| `UserService`            | Handles registration and user management        |
+| `DatabaseConnection`     | Manages connection to MySQL database            |
+| `AuthenticationException`| Custom exception for login issues               |
+| `ReportValidationException` | Custom exception for invalid reports       |
+
+---
+
+## 📊 Use Cases
+
+| Actor      | Actions                                                              |
+|------------|----------------------------------------------------------------------|
+| **Admin**      | Login, Approve/Reject Reports, Manage Users, View Reports/Alerts     |
+| **Authority**  | Login, Post Alerts, Convert Reports, View Reports/Alerts             |
+| **Citizen**    | Register, Login, Submit Reports, View Approved Reports/Alerts        |
+| **System**     | Store and Retrieve data in the database                              |
+
+---
+
+## 📈 Use Case Diagram (Simplified)
+
+- **Admin** → Approves reports, manages users, views all data  
+- **Authority** → Posts alerts, converts reports, views updates  
+- **Citizen** → Submits reports, views alerts and approved reports  
+- **System** → Handles database operations  
+
+---
+
+## 📧 Contact
+
+**Name**: Rohit Kumar Chaudhary  
+**Email**: [rohitkc52005@gmail.com](mailto:rohitkc52005@gmail.com)
+
